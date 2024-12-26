@@ -61,6 +61,30 @@
             padding: 10px;
             text-align: center;
         }
+        /* 基本的链接样式 */
+        .dynamic-underline {
+            position: relative;
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        /* 伪元素实现下划线效果 */
+        .dynamic-underline::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: white;
+            transition: width 0.3s ease;
+        }
+
+        /* 鼠标悬停时，下划线宽度变为100% */
+        .dynamic-underline:hover::after {
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -68,9 +92,10 @@
         <h1>TCMPulse</h1>
         <nav>
             <ul>
-                <dd><a href="https://jasonhhhhhhhh.github.io/TCMpulse/">Home</a></dd>
+                <li><a href="https://jasonhhhhhhhh.github.io/TCMpulse/">Home</a></li>
                 <li><a href="https://jasonhhhhhhhh.github.io/TCMPulse-products/">Product Introduction</a></li>
-                <li><a href="https://jasonhhhhhhhh.github.io/TCMPulse-contact/">Contact Us</a></li>
+                <li><a href="https://jasonhhhhhhhh.github.io/TCMPulse-contact/" class="">Contact Us</a></li>
+                <a href="#" class="dynamic-underline">鼠标悬停时有动态下划线</a>
             </ul>
         </nav>
     </header>
